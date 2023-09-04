@@ -1,4 +1,4 @@
-
+## FROM A GITHUB SOLUTION
 def minMeetingRooms(intervals):
     intervals = sorted(intervals)
     if len(intervals) == 1:
