@@ -20,13 +20,19 @@
 
 # print(lengthOfLIS([1,3,6,7,9,4,10,5,6])) ## WRONG ANSWER FOR THIS
 
-# def lengthOfLIS(nums):
-#     dp = [0] * len(nums)
+def lengthOfLIS(nums):
+    cache = [1] * len(nums)
     
-#     def dfs(i, l, c):
-        
+    for i in range(len(nums) -1, -1, -1):
+        for j in range(i+1, len(nums)):
+            if nums[i] < nums[j]:
+                cache[i] = max(cache[i], 1+cache[j])
+            print(" =================== ")
+            print(i,   j)
+            print(cache)
+            print(nums)
+            print(" =================== ")
     
-    
-#     for i  in range(len(nums))
+    return max(cache)
 
-#         dfs(i, nums, ):
+print(lengthOfLIS([1,3,6,7,9,4,10,5,6]))
