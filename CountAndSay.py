@@ -17,10 +17,10 @@
 
 # print(countAndSay(4)) ## Wrong with 5
 
-def countAndSay(n):
+def countAndSay(n): ## runtime 71 %, Memory 15.5% ...hnmmm
     if n == 1:
         return "1"
-    
+
     cache = [1]
     for _ in range(1,n):
         new_cache = []
