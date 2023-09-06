@@ -1,4 +1,3 @@
-
 def groupAnagrams(strs):
     output = []
 
@@ -7,7 +6,8 @@ def groupAnagrams(strs):
         l = [strs[0]]
         i = 1
         pop_list = [0]
-        for i in range(1, len(strs[1:])):
+        for i in range(1, len(strs)):
+            print(l[0], "vs", strs[i])
             if sorted(l[0]) == sorted(strs[i]):
                 l.append(strs[i])
                 pop_list.append(i)
@@ -20,4 +20,4 @@ def groupAnagrams(strs):
         output.append(l)
     return output
     
-print(groupAnagrams(["eat","tea","tan","ate","nat","bat"]))
+print(groupAnagrams(["",""]))
