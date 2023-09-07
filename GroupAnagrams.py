@@ -22,7 +22,7 @@
 # print(groupAnagrams(["",""]))
 
 
-def groupAnagrams(strs): ## using Hash
+def groupAnagrams(strs): ## using Hash... Must Use Hash when sorting problems 
     hash_dict = {}
     for str in strs:
         sorted_str = "".join(sorted(str))
