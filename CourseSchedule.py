@@ -27,4 +27,32 @@ def cs(numCourses, prerequisites):
             d[pre[0]].append(pre[1])
         else:
             d[pre[0]] = [pre[1]]
+            
+    taken = [] ## MUST CHECK THIS FIRST
+    
+    def dfs(course):
+        if not d[course]:
+            return True
+        if course in taken:
+            return False
+        
+        taken.append(course)
+        
+        for next_course in d[course]:
+            if dfs(next_course) == False:
+                return False
+        
+        d[course] = []
+        
+        return True
+    
+    
+    for i in range(numCourses):
+        if dfs(i) == False:
+            return False
+        
+    return True
+        
+        
 
+## I REALLY DONT UNDERSTAND THIS ONE
