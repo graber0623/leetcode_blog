@@ -20,39 +20,54 @@
 
 # a = {1: [0, 1], 0: [1, 1]}
 
-def cs(numCourses, prerequisites): 
-    d = {}
-    for pre in prerequisites:
-        if pre[0] in d:
-            d[pre[0]].append(pre[1])
-        else:
-            d[pre[0]] = [pre[1]]
+# def cs(numCourses, prerequisites): 
+#     d = {}
+#     for pre in prerequisites:
+#         if pre[0] in d:
+#             d[pre[0]].append(pre[1])
+#         else:
+#             d[pre[0]] = [pre[1]]
             
-    taken = [] ## MUST CHECK THIS FIRST
+#     taken = [] ## MUST CHECK THIS FIRST
     
-    def dfs(course):
-        if not d[course]:
-            return True
-        if course in taken:
-            return False
+#     def dfs(course):
+#         if not d[course]:
+#             return True
+#         if course in taken:
+#             return False
         
-        taken.append(course)
+#         taken.append(course)
         
-        for next_course in d[course]:
-            if dfs(next_course) == False:
-                return False
+#         for next_course in d[course]:
+#             if dfs(next_course) == False:
+#                 return False
         
-        d[course] = []
+#         d[course] = []
         
-        return True
+#         return True
     
     
-    for i in range(numCourses):
-        if dfs(i) == False:
-            return False
+#     for i in range(numCourses):
+#         if dfs(i) == False:
+#             return False
         
-    return True
+#     return True
         
-        
+from collections import defaultdict        
 
 ## I REALLY DONT UNDERSTAND THIS ONE
+prerequisites = [[1,0],[2,0],[4,2],[3,2],[4,1],[7,1],[5,4]]
+
+d = {}
+for pre in prerequisites:
+    if pre[0] in d:
+        d[pre[0]].append(pre[1])
+    else:
+        d[pre[0]] = [pre[1]]
+dd = defaultdict(list)
+for course, p in prerequisites:
+    dd[course].append(p)
+    
+print(d)
+
+print(dd)
