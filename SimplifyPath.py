@@ -21,3 +21,6 @@ def simplifyPath(path):
 print(simplifyPath(path1))
 print(simplifyPath(path2))
 print(simplifyPath(path3))
+
+a = [".."]
+
