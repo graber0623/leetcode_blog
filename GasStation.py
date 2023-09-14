@@ -1,4 +1,4 @@
-def gasStation(gas, cost):
+def gasStation(gas, cost): ## TIME LIMIT EXCEEDED
     for i in range(len(gas)):
         new_gas = gas[i:] + gas[:i]
         new_cost = cost[i:] + cost[:i]
