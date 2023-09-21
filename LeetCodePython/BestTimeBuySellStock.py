@@ -8,6 +8,7 @@ def maxProfit(prices, fee) -> int:
     profit=0
     n=len(prices)
     for i in range(1,n):
+        print(prices[i])
         print("pos : ",pos, "   ", profit-prices[i])
         pos=max(pos,profit-prices[i])
         
