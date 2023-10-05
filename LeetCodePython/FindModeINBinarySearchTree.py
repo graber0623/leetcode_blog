@@ -38,3 +38,30 @@ print(list(d.keys()))
 #         return list(d_items[0])[1]
 
 ## WRONG SOLUTION
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+from collections import defaultdict
+class Solution:
+    def findMode(self, root: Optional[TreeNode]) -> List[int]:
+        d = defaultdict(int)
+        def dfs(node):
+            if not node:
+                return
+            d[node.val]+=1
+            dfs(node.left)
+            dfs(node.right)
+
+        dfs(root)
+
+        count_d = defaultdict(list)
+        for key in list(d.keys()):
+            count_d[d[key]].append(key)
+        
+        count_d_items = sorted(count_d.items(), reverse = True)
+        return list(count_d_items[0])[1]
+    
