@@ -1,6 +1,6 @@
 # Write your MySQL query statement below
 select
-hashtag, count(*) as hashtag_count
+HASHTAG, count(*) as HASHTAG_COUNT
 from
 
 (
@@ -13,3 +13,4 @@ select
 from Tweets
 ) XX
 group by hashtag
+order by hashtag_count desc limit 3
