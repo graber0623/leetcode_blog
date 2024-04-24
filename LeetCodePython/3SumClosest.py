@@ -7,3 +7,6 @@ class Solution:
             if abs(sum(sub) - target) < abs(ans - target):
                 ans = sum(sub)
         return ans
+## Time Limit
+
+## Two Pointer with one for loop
